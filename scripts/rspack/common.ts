@@ -14,7 +14,7 @@ export default defineConfig({
     output: {
         clean: true,
         path: inCwd('dist'),
-        filename: '[name]-[contenthash].js',
+        filename: `[name]-${isDev ? 'bundle' : '[contenthash]'}.js`,
     },
     resolve: {
         extensions: ['.js', '.tsx', '.ts'],
@@ -56,10 +56,6 @@ export default defineConfig({
                         },
                     } satisfies SwcConfig,
                 },
-            },
-            {
-                test: /\.css$/,
-                type: 'css',
             },
             {
                 test: /\.scss$/,
