@@ -1,0 +1,36 @@
+.photograph {
+    position: fixed;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: black;
+
+    canvas {
+        display: none;
+    }
+
+    > video {
+        width: 100%;
+        height: 100%;
+    }
+
+    > .take-photo {
+        --size: 60px;
+
+        position: absolute;
+        right: 0;
+        bottom: 80px;
+        left: 0;
+        width: var(--size);
+        height: var(--size);
+        margin: 0 auto;
+        cursor: pointer;
+        border: 4px solid white;
+        border-radius: 50%;
+
+        &:active {
+            --shrink: 0.9;
+
+            transform: scale3d(var(--shrink), var(--shrink), 1);
+        }
+    }
+}
